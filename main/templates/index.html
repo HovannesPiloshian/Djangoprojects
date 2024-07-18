@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Electronics</h1>
+    <hr>
+    {% for i in list %}
+        <h3>{{ i.brand }}</h3>
+        <p>{{ i.name }}</p>
+        <a href="{% url 'index_info' i.id %}"><img src="{{ i.image.url }}" alt=""></a>
+        <h5>{{ i.price }}</h5>
+        <p>{{ i.discount_price }}</p>
+        <p>Color: {{ i.color }}</p>
+        <p>Update date: {{ i.date }}</p>
+        <hr>
+    {% endfor %}
+
+</body>
+</html>
